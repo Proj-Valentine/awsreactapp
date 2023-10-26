@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-// import BarChart from './components/BarChart';
+import BarChart from './components/BarChart';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
@@ -19,7 +19,7 @@ function App() {
       </div > 
       <div className='sidemainbox'>
         <div className = "sidebar"><Sidebar/></div>
-        {/* <div className='mainsection'><Mainsection/></div> */}
+        <div className='mainsection'><Mainsection/></div>
       </div>
       <div className='Footer'><Footer/>
       </div>
