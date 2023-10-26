@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// require('dotenv').config();
+// const { BlobServiceClient } = require("@azure/storage-blob");
+// const storageAccountConnectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
+// const blobServiceClient = BlobServiceClient.fromConnectionString(storageAccountConnectionString);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
