@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import BarChart from './components/BarChart';
+import LineChart from './components/LineChart';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';

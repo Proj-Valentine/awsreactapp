@@ -13,16 +13,16 @@ import { FiMapPin } from 'react-icons/fi'
 const Footer = () => {
     return (
         <footer>
-            <div style={{fontStyle:"italic"}}><p> YOUR ONE STOP ANALYTIC SOLUTIONS</p>
+            <div style={{fontStyle:"italic"}}><p> SEND ME AN EMAIL HERE</p>
             </div>
 
             <div className="Footertwo" style={{ display: "flex", justifyContent:"space-between", width:"100%",textAlign:"center"}}>
                 <div style={{fontStyle:"italic"}}> <FiMapPin size={40} color="red" />&nbsp;<span>Visit us in our store and locaion</span></div>
-                <div><SocialIcon url="https://mail.google.com" />vkampah28@gmail.com<a href="#top" style={{textDecoration:"none", color:"white"}}>Go to Top</a></div>
+                <div> <span><SocialIcon url="https://mail.google.com" /> &nbsp; vkampah28@gmail.com </span> <br></br> <a href="#top" style={{textDecoration:"none", color:"white"}}>Go to Top</a></div>
                 <div><p>PROJECTS AND PROFILE</p>
                 <SocialIcon  label="my video channel" network= "linkedin" url="https://www.linkedin.com/in/valentine-ampah-b92a0198" target="_blank" />
                 &nbsp;<span><a href="www.linkedin.com/in/valentine-ampah-b92a0198" target="_blank" style={{textDecoration:"none", color:"white"}}>LinkedIn</a></span>
-                    &nbsp;&nbsp;<SocialIcon network = "github" url="https://github.com/VK-Ampah/IntroToWebDev" target="_blank" bgColor="white" fgColor="black" />
+                    &nbsp;&nbsp;<SocialIcon network = "github" url="https://github.com/Proj-Valentine/Python_Projects" target="_blank" bgColor="white" fgColor="black" />
                     &nbsp;<span><a href="www.linkedin.com/in/valentine-ampah-b92a0198" target="_blank" style={{textDecoration:"none", color:"white"}}>GitHub</a></span>
                 </div>
             </div>

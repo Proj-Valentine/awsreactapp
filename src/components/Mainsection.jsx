@@ -1,9 +1,14 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import "../App.css";
-import { Line, Bar } from 'react-chartjs-2';
+import { Pie,Line, Bar } from 'react-chartjs-2';
 // import { faComment, faComments, faEnvelope, faEnvelopeOpen, faPaperPlane, faInbox, faPaperclip, faThumbsUp, faThumbsDown, faReply, faShare, faEdit, faTrash, faArchive, faBell, faExclamation, faQuestion, faInfo } from '@fortawesome/free-solid-svg-icons';
 // import Buttons from './Buttons';
+// import Data2 from './data2';
+import BarGraph from './data2';
+import BarGraph2 from './BarGraph2';
+import LineChart from './LineChart';
+import PieChart from './PieChart';
 
 
 const Mainsection = () => {    
@@ -55,7 +60,7 @@ const Mainsection = () => {
         
                   <div style={{ felx:1, width : "50%", borderRadius:"20px",border:" 4px white solid"  }}>
                         <h1> PROJECT DESCRIPTIONS</h1>
-                        <p> INSERT TEXT HERE</p>  
+                        <p>  </p>  
                         <p> INSERT TEXT HERE</p> 
                         <p> INSERT TEXT HERE</p> 
                         <p> INSERT TEXT HERE</p> 
@@ -74,7 +79,7 @@ const Mainsection = () => {
         {/* //second flex column */}
 
         <div className='Dash-header' style={{backgroundColor:"#023058",height:"15%",paddingBottom:"5px", marginBottom:"10px",marginTop:"10px",color:'white' }}>
-        <h1> SALES DASHBOARD FOR 2023</h1>
+        <h1> Airlin Delays for 2019/2020</h1>
         </div>  
         {/* /// added from FIGMA and modified  to replace the code above*/}
         <div className="scorecard" style={{backgroundColor:"white" , display: "flex", flexDirection:"row", width:"100%",justifyContent:"space-evenly",height:"40%",paddingBottom:"5px", marginBottom:"10px", border: "1px solid red",}}>
@@ -85,20 +90,25 @@ const Mainsection = () => {
 
 
         <div className='Barchart' style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", width: "100%", height: "35%", backgroundColor: "#08223c", alignItems: "flex-end", border: "1px solid #007bff" }}>
-          <div style={{ backgroundColor: "#ffffff", width: "50%", height: "100%", color: 'black', marginRight: "10px" }}>
+          {/* <div style={{ backgroundColor: "#ffffff", width: "50%", height: "100%", color: 'black', marginRight: "10px" }}>
             <Bar data={data} options={options} />
-          </div>
+          </div> */}
           <div style={{ backgroundColor: "#ffffff", width: "50%", height: "100%", color: 'black', marginRight: "10px" }}>
-            <Bar data={data} options={options} />
+            <PieChart />
           </div>
           <div style={{ backgroundColor: "#ffffff", width: "35%", height: "100%", color: 'black', marginRight: "10px" }}>
-            <Bar data={data} options={options} />
+            <BarGraph  />
           </div>
+          <div style={{ backgroundColor: "#ffffff", width: "35%", height: "100%", color: 'black', marginRight: "10px" }}>
+            <BarGraph2  />
+          </div>
+          
         </div>
 
         <div className='Linegraph' style={{width:"100%",height:"30%",display:"flex",flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
             <div style={{backgroundColor:"#ffffff",width:"100%" ,height:"100%", border:"solid"}}>
-             <Line data={data} options={options} />
+             {/* <Line data={data} options={options} /> */}
+             <LineChart />
             </div>   
         </div>
 

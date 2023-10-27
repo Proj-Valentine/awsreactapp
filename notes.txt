@@ -1,0 +1,138 @@
+import React from 'react';
+import { Chart as ChartJS, BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip } from 'chart.js/auto';
+import { Line } from 'react-chartjs-2';
+
+import Records from './airline_delay.json';
+import { type } from '@testing-library/user-event/dist/type';
+ChartJS.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip);
+
+const LineChart = () => {
+
+    // declaring the month array
+
+    let carrierNameGroup = [];
+    Records && Records.forEach((item) => {
+      carrierNameGroup.push(item.carrier_name);
+    });
+    // ... is used to convert the Set object back into an array
+    const uniqueCarrierNames= [...new Set(carrierNameGroup)];
+    const sortedCarriers = uniqueCarrierNames.sort((a, b) => a - b);
+    const carrierRename = sortedCarriers.forEach((item) => item.split(" ")[0] + "_Airline");
+
+    // delcaring monthly total values
+
+    let JanTotalvalues = [];
+    let FebTotalvalues = [];
+    let MarTotalvalues = [];
+    let AprTotalvalues = [];
+    let MayTotalvalues = [];
+    let JunTotalvalues = [];
+    let JulTotalvalues = [];
+    let AugTotalvalues = [];   
+    let SepTotalvalues = [];
+    let OctTotalvalues = [];   
+    let NovTotalvalues = [];
+    let DecTotalvalues = [];
+
+    Records && Records.forEach((item) => { 
+      if (item.month === 1  && item.year === 2019) { JanTotalvalues.push(item.arr_delay) }
+      else if (item.month === 2 && item.year === 2019) { FebTotalvalues.push(item.arr_delay) }
+      else if (item.month === 3 && item.year === 2019) { MarTotalvalues.push(item.arr_delay) }
+      else if (item.month === 4 && item.year === 2019) { AprTotalvalues.push(item.arr_delay) }
+      else if (item.month === 5 && item.year === 2019) { MayTotalvalues.push(item.arr_delay) }
+      else if (item.month === 6 && item.year === 2019) { JunTotalvalues.push(item.arr_delay) }
+      else if (item.month === 7 && item.year === 2019) { JulTotalvalues.push(item.arr_delay) }
+      else if (item.month === 8 && item.year === 2019) { AugTotalvalues.push(item.arr_delay) }
+      else if (item.month === 9 && item.year === 2019) { SepTotalvalues.push(item.arr_delay) }
+      else if (item.month === 10 && item.year === 2019) { OctTotalvalues.push(item.arr_delay) }
+      else if (item.month === 11 && item.year === 2019) { NovTotalvalues.push(item.arr_delay) }
+      else if (item.month === 12 && item.year === 2019) { DecTotalvalues.push(item.arr_delay) }
+    });
+
+    let JanTotal2019 = JanTotalvalues.reduce((a, b) => a + b, 0);
+    let FebTotal2019 =  FebTotalvalues.reduce((a, b) => a + b, 0);
+    let MarTotal2019 =  MarTotalvalues.reduce((a, b) => a + b, 0);
+    let AprTotal2019 = AprTotalvalues.reduce((a, b) => a + b, 0);  
+    let MayTotal2019 = MayTotalvalues.reduce((a, b) => a + b, 0);
+    let JunTotal2019 = JunTotalvalues.reduce((a, b) => a + b, 0);
+    let JulTotal2019 = JulTotalvalues.reduce((a, b) => a + b, 0);
+    let AugTotal2019 = AugTotalvalues.reduce((a, b) => a + b, 0);
+    let SepTotal2019 = SepTotalvalues.reduce((a, b) => a + b, 0);
+    let OctTotal2019 = OctTotalvalues.reduce((a, b) => a + b, 0);
+    let NovTotal2019 = NovTotalvalues.reduce((a, b) => a + b, 0);
+    let DecTotal2019 = DecTotalvalues.reduce((a, b) => a + b, 0);
+
+    const monthlyTotal2019 = [JanTotal2019, FebTotal2019, MarTotal2019, AprTotal2019, MayTotal2019, JunTotal2019, JulTotal2019, AugTotal2019, SepTotal2019, OctTotal2019, NovTotal2019, DecTotal2019];
+
+// declaing 2020 monthly total values
+    let JanTotalvalues2020 = [];
+    let FebTotalvalues2020 = [];
+    let MarTotalvalues2020 = [];
+    let AprTotalvalues2020 = [];
+    let MayTotalvalues2020 = [];
+    let JunTotalvalues2020 = [];
+    let JulTotalvalues2020 = [];
+    let AugTotalvalues2020 = [];
+    let SepTotalvalues2020 = [];
+    let OctTotalvalues2020 = [];
+    let NovTotalvalues2020 = [];
+    let DecTotalvalues2020 = [];
+
+    Records && Records.forEach((item) => {
+      if(item.month === 1 && item.year === 2020) {JanTotalvalues2020.push(item.arr_delay)}    
+      else if(item.month === 2 && item.year === 2020) {FebTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 3 && item.year === 2020) {MarTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 4 && item.year === 2020) {AprTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 5 && item.year === 2020) {MayTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 6 && item.year === 2020) {JunTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 7 && item.year === 2020) {JulTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 8 && item.year === 2020) {AugTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 9 && item.year === 2020) {SepTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 10 && item.year === 2020) {OctTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 11 && item.year === 2020) {NovTotalvalues2020.push(item.arr_delay)}
+      else if(item.month === 12 && item.year === 2020) {DecTotalvalues2020.push(item.arr_delay)}
+    })
+
+    let JanTotal2020 = JanTotalvalues2020.reduce((a, b) => a + b, 0);
+    let FebTotal2020 =  FebTotalvalues2020.reduce((a, b) => a + b, 0);
+    let MarTotal2020 =  MarTotalvalues2020.reduce((a, b) => a + b, 0);
+    let AprTotal2020 = AprTotalvalues2020.reduce((a, b) => a + b, 0);
+    let MayTotal2020 = MayTotalvalues2020.reduce((a, b) => a + b, 0);
+    let JunTotal2020 = JunTotalvalues2020.reduce((a, b) => a + b, 0);
+    let JulTotal2020 = JulTotalvalues2020.reduce((a, b) => a + b, 0);
+    let AugTotal2020 = AugTotalvalues2020.reduce((a, b) => a + b, 0);
+    let SepTotal2020 = SepTotalvalues2020.reduce((a, b) => a + b, 0);
+    let OctTotal2020 = OctTotalvalues2020.reduce((a, b) => a + b, 0);
+    let NovTotal2020 = NovTotalvalues2020.reduce((a, b) => a + b, 0);
+    let DecTotal2020 = DecTotalvalues2020.reduce((a, b) => a + b, 0);
+
+
+    const monthlyTotal2020 = [JanTotal2020, FebTotal2020, MarTotal2020, AprTotal2020, MayTotal2020, JunTotal2020, JulTotal2020, AugTotal2020, SepTotal2020, OctTotal2020, NovTotal2020, DecTotal2020];
+
+   
+    const data = { 
+        labels:carrierRename,
+        datasets: [{
+            label: 'total delay for 2020',
+            data: [11],
+            borderColor: ['rgba(255, 206, 86, 0.2)'],
+            tension: 0.3,
+        },
+      {
+        label: 'total delay for 2019',
+        data: [23],
+        borderColor: ['rgba(255, 206, 86, 0.2)'],
+        tension: 0.3,
+      }] 
+    };
+
+    return (
+      <div>
+        <p>{sortedCarriers}</p>
+        <p>{carrierRename}</p>
+        <Line data ={data}/> 
+    </div>
+    );
+}
+
+export default LineChart;

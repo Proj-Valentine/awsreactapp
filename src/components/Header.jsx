@@ -30,7 +30,7 @@ function Header() {
                 <div id="search-wrapper" style={{display:"flex", flexDirection:"row"}}>
                         <input style={{ fontSize: "20px",width: "80%",borderRadius:"5px" }} type="text" placeholder="Enter your search term" />
                         <span ><Buttons ></Buttons></span>
-                        <span > <FaMicrophone style={{fontSize:"20px", height:"100%",width:"100%"}}/> </span>
+                        {/* <span > <FaMicrophone style={{fontSize:"20px", height:"100%",width:"100%"}}/> </span> */}
                       </div>
           </div>
           <div style={{ width:"30%",display:'flex', flexDirection:"row",justifyContent:"space-evenly", alignItems:"center",textAlign:"center", backgroundColor: "#023058", color:"white"}}>
